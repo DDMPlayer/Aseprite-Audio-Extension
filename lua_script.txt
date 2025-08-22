@@ -1,0 +1,59 @@
+local dlg = Dialog("Aseprite Audio Extension - Warning");
+dlg:label{ id="t1", label="Hello!" }
+dlg:label{ id="t2", label="This instance of Aseprite is being monitored" }
+dlg:label{ id="t3", label="by the Aseprite Audio Extension." }
+dlg:label{ id="t4", label="" }
+dlg:label{ id="t5", label="All data is handled locally." }
+dlg:label{ id="t6", label="" }
+dlg:label{ id="t7", label="Thank you for using AAE!" }
+
+local lastSprite = "";
+local lastFrame = -1;
+app.events:on('sitechange', function()
+	update_content()
+end)
+
+app.events:on('aftercommand', function()
+	update_content()
+end)
+
+
+function update_content()
+	if(app ~= nil) then
+		if(app.sprite ~= nil) then
+			log('s', app.sprite.filename)
+			log('x', #app.sprite.frames)
+			log('p', get_frame())
+		
+			if #app.sprite.frames >= app.frame.frameNumber then
+				log('n', app.sprite.frames[app.frame.frameNumber].duration * 1000)
+			end
+		else
+			log('s', '')
+		end
+	end
+end
+
+dlg:show{ wait=false }
+
+function log(key, value)
+	io.write(key .. ':' .. value .. '&')
+	io.flush()
+end
+
+
+function get_frame()
+	if(app.sprite == nil) then
+		return -1
+	end
+
+	local spr = app.sprite
+	local frameIndex = app.frame.frameNumber
+	local timeMs = 0
+
+	for i = 1, frameIndex - 1 do
+		timeMs = timeMs + spr.frames[i].duration
+	end
+
+	return timeMs * 1000
+end

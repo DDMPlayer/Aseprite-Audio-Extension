@@ -1,0 +1,13 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dubx71un22jas"]
+
+[ext_resource type="Texture2D" uid="uid://cwugnptgi81yq" path="res://textures/AtlasButtonDefault.tres" id="1_vf4ya"]
+
+[resource]
+texture = ExtResource("1_vf4ya")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 3.0

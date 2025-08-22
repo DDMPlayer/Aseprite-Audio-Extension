@@ -1,0 +1,48 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Aseprite Audio Extension"
+config/version="2.2"
+run/main_scene="res://main.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="AsepriteAudioExtension"
+config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/show_image=false
+config/icon="res://textures/ase-export.png"
+
+[autoload]
+
+Util="*res://scripts/util.gd"
+AudioLoader="*res://scripts/audio_loader.gd"
+FFmpeg="*res://scripts/ffmpeg_wrapper.gd"
+Aseprite="*res://scripts/aseprite_wrapper.gd"
+Memory="*res://scripts/memory.gd"
+
+[display]
+
+window/size/viewport_width=256
+window/size/viewport_height=144
+window/size/window_width_override=512
+window/size/window_height_override=288
+window/subwindows/embed_subwindows=false
+window/stretch/aspect="keep_width"
+window/stretch/scale=2.0
+
+[editor_plugins]
+
+enabled=PackedStringArray()
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

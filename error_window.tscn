@@ -1,0 +1,100 @@
+[gd_scene load_steps=2 format=3 uid="uid://36mg15nhh7ld"]
+
+[ext_resource type="Theme" uid="uid://ddpvdh1tvpifa" path="res://Theme.tres" id="1_rhy2t"]
+
+[node name="ErrorWindow" type="Window"]
+initial_position = 1
+size = Vector2i(282, 158)
+content_scale_mode = 2
+content_scale_aspect = 4
+content_scale_factor = 2.0
+
+[node name="Main" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rhy2t")
+
+[node name="BackgroundColor" type="ColorRect" parent="Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.392157, 0.329412, 0.376471, 1)
+
+[node name="Background" type="Control" parent="Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Main/Background"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -3.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.25098, 0.25098, 0.168627, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Main/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Main/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Main"]
+layout_mode = 1
+offset_left = 7.0
+offset_top = -1.0
+offset_right = 169.0
+offset_bottom = 11.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "AN ERROR OCCURED - "
+
+[node name="Title2" type="Label" parent="Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 14.0
+offset_right = -5.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
+autowrap_mode = 3
