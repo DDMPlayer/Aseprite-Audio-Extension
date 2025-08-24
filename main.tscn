@@ -154,8 +154,7 @@ offset_left = 3.0
 offset_top = -2.0
 offset_right = 165.0
 offset_bottom = 18.0
-text = "ASEPRITE AUDIO EXTENSION v2.2
-"
+text = "ASEPRITE AUDIO EXTENSION v2.2.1"
 
 [node name="Title" type="Label" parent="MainMenu/Control/Title"]
 show_behind_parent = true
@@ -164,7 +163,7 @@ offset_top = 1.0
 offset_right = 162.0
 offset_bottom = 21.0
 theme_override_colors/font_color = Color(0.776471, 0.776471, 0.776471, 1)
-text = "ASEPRITE AUDIO EXTENSION v2.2
+text = "ASEPRITE AUDIO EXTENSION v2.2.1
 "
 
 [node name="StatusText" type="Label" parent="MainMenu/Control"]
@@ -424,7 +423,7 @@ Aseprite Audio Extension is provided for free at [url=\"https://ddmplayer.itch.i
 If you got it from somewhere else, run! Quick!
 If you found an issue, please contact me!
 
-Aseprite Audio Extension v2.2 by DDMPlayer.
+Aseprite Audio Extension v2.2.1 by DDMPlayer.
 Aseprite font (as a .ttf) by haloflooder.
 Better Processes plugin by GreenFox.
 AAE v2.x is powered by the Godot 4 Engine.

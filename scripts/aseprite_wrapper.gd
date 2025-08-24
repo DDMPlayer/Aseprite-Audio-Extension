@@ -56,6 +56,8 @@ func guarantee_aseprite_path() -> bool:
 
 
 func guarantee_script_file() -> bool:
+	DirAccess.make_dir_recursive_absolute(script_path.get_base_dir());
+	
 	var script := FileAccess.open(script_path, FileAccess.WRITE);
 	if(script != null):
 		script.store_string(FileAccess.get_file_as_string("res://lua_script.txt"));
@@ -64,42 +66,15 @@ func guarantee_script_file() -> bool:
 	var error := FileAccess.get_open_error();
 	if(error != OK):
 		print("FAILED TO WRITE THE FILE. HOWEVER!!! THE PATH IS: ", script_path);
-		show_err(error);
+		Util.show_error_window(
+			"Error",
+			"An error has occurred while trying to write the lua script. Below is the error message:\n\n" + error_string(error)
+			+ "\n\nMore information:\n" + ("Passed first check" if DirAccess.dir_exists_absolute(script_path.get_base_dir()) else "Failed first check")
+			+ "\n" + ("AppData path" if script_path.to_lower().contains("appdata") else "Aseprite path")
+		);
 		return FileAccess.file_exists(script_path);
 	
 	return FileAccess.file_exists(script_path);
-
-
-
-func show_err(error : Error) -> void:
-	var err_string := "";
-	match(error):
-		ERR_FILE_NOT_FOUND:
-			err_string = "Not found.";
-		ERR_FILE_BAD_DRIVE:
-			err_string = "Bad drive.";
-		ERR_FILE_BAD_PATH:
-			err_string = "Bad path.";
-		ERR_FILE_NO_PERMISSION:
-			err_string = "No permission.";
-		ERR_FILE_ALREADY_IN_USE:
-			err_string = "Already in use.";
-		ERR_FILE_CANT_OPEN:
-			err_string = "Can't open.";
-		ERR_FILE_CANT_WRITE:
-			err_string = "Can't write.";
-		ERR_FILE_CANT_READ:
-			err_string = "Can't read.";
-		ERR_FILE_UNRECOGNIZED:
-			err_string = "Unrecognized.";
-		ERR_FILE_CORRUPT:
-			err_string = "Corrupt.";
-		ERR_FILE_MISSING_DEPENDENCIES:
-			err_string = "Missing dependencies.";
-		ERR_FILE_EOF:
-			err_string = "End of file (EOF).";
-	
-	Util.show_error_window("Error", "An error has occurred while trying to write the lua script. Below is the error message:\n\n" + err_string);
 
 
 

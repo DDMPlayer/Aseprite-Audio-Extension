@@ -41,7 +41,7 @@ Export an executable as you would with any Godot project, but add the FFmpeg exe
 
 # Credits
 
-- Aseprite Audio Extension v2.2 by [DDMPlayer](https://bsky.app/profile/ddmplayer.bsky.social)
+- Aseprite Audio Extension v2.2.1 by [DDMPlayer](https://bsky.app/profile/ddmplayer.bsky.social)
 - Aseprite font (as a .ttf) by [haloflooder](https://www.youtube.com/user/haloflooder) (not affiliated)
 - Better Processes plugin by [GreenFox](https://gitlab.com/greenfox) (not affiliated)
 - AAE v2.x is powered by the [Godot 4 Engine](https://godotengine.org/) (not affiliated)
